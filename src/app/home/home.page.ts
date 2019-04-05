@@ -9,6 +9,7 @@ import { SearchNewsService } from '../services/search-news.service';
 export class HomePage implements OnInit{
  
   public noticia:any = [];
+  public noticiarecente:any [];
   constructor(private serviceProvider: SearchNewsService){
 
   }
@@ -22,6 +23,17 @@ export class HomePage implements OnInit{
       (data:any) => {
         this.noticia = data.articles;
         console.log(this.noticia.content);
+      }, error => {
+        console.log(error);
+      }
+    )
+  }
+
+  getNewsRecent(){
+    this.serviceProvider.getNewsRecent().subscribe(
+      (data:any) => {
+        this.noticia = data.articles;
+        console.log(this.noticia);
       }, error => {
         console.log(error);
       }
