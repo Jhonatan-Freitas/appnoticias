@@ -5,9 +5,9 @@ import { tap, catchError } from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json;charset=utf-8' })
 };
-
+//87d4c2fa2ce543a0bb6a11ea13721b71
 const URL_API = "https://newsapi.org/v2/";
-const KEY = "87d4c2fa2ce543a0bb6a11ea13721b71";
+const KEY = "6dd27f8adaf94238b8b78802479c9803";
 @Injectable({
   providedIn: 'root'
 })

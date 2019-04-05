@@ -32,12 +32,40 @@
                   <img src="{{rs.urlToImage}}" class="card-img">
                 </div>
                 <p class="card-text">{{rs.description}}</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted">{{rs.publishedAt}}</small></p>
               </div>
             </div>
           </div>
     </div>
-   
-    
-      </div>
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="brasil-tab">
+      <!--Conteúdo da Tab Notícias do Brasil-->
+        <div class="row no-gutters">
+            <div class="col-md-8" *ngFor="let rs of noticia">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div class="col-md-4">
+                  <img src="" class="card-img">
+                </div>
+                <p class="card-text">Brasil</p>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="mundo-tab">
+      <!--Conteúdo da Tab Notícias do Brasil-->
+        <div class="row no-gutters">
+            <div class="col-md-8" *ngFor="let rs of noticia">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <div class="col-md-4">
+                  <img src="" class="card-img">
+                </div>
+                <p class="card-text">Mundo</p>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
 </ion-content>
