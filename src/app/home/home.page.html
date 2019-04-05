@@ -24,47 +24,20 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="recentes-tab">
       <!--Conteúdo da Tab Notícias Recentes-->
         <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP2Jt7hDb-ZJGzrrm91TxELXL-iXDmLhte9aIsbMJsl9b56dI9CQ" class="card-img">
-            </div>
-            <div class="col-md-8">
+            
+            <div class="col-md-8" *ngFor="let rs of noticia">
               <div class="card-body">
-                <h5 class="card-title">Notícias Recentes</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">{{rs.title}}</h5>
+                <div class="col-md-4">
+                  <img src="{{rs.urlToImage}}" class="card-img">
+                </div>
+                <p class="card-text">{{rs.description}}</p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
           </div>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="brasil-tab">
-      <!--Conteúdo da Tab Notícias do Brasil-->
-        <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP2Jt7hDb-ZJGzrrm91TxELXL-iXDmLhte9aIsbMJsl9b56dI9CQ" class="card-img">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Notícias do Brazil</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="mundo-tab">
-      <!--Conteúdo da Tab Notícias do Mundo-->
-        <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP2Jt7hDb-ZJGzrrm91TxELXL-iXDmLhte9aIsbMJsl9b56dI9CQ" class="card-img">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Notícias do Mundo</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-    </div>
+   
+    
       </div>
 </ion-content>

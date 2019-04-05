@@ -21,7 +21,7 @@ export class HomePage implements OnInit{
     this.serviceProvider.getNewsBrazil().subscribe(
       (data:any) => {
         this.noticia = data.articles[0];
-        console.log(this.noticia.title);
+        console.log(this.noticia.content);
       }, error => {
         console.log(error);
       }
