@@ -5,26 +5,24 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<!--Início do Menu-->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item"> <!--Tab dos Recentes-->
-      <a class="nav-link active" id="recentes-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Brasil</a>
+
+<ion-content padding>
+  <!--Conteúdo de cada Tab-->
+ 
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Brasil</a>
     </li>
-    <li class="nav-item"> <!--Tab do Brasil-->
-      <a class="nav-link" id="brasil-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" (click)="getNewsRecent()">Recentes</a>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" (click)="getNewsRecent()">Recentes</a>
     </li>
-    <li class="nav-item"> <!--Tab do Mundo-->
-      <a class="nav-link" id="mundo-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mundo</a>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mundo</a>
     </li>
   </ul>
-  <!--Fim do Menu-->
-<ion-content padding>
-   <!--Conteúdo de cada Tab-->
-   <div class="card mb-3 tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="recentes-tab">
-      <!--Conteúdo da Tab Notícias Recentes-->
-      <div class="row no-gutters"> 
-        <div class="col-md-8" *ngFor="let rs of noticia">
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="col-md-8" *ngFor="let rs of noticia">
           <div class="card-body">
             <h5 class="card-title">{{rs.title}}</h5>
             <div class="col-md-4">
@@ -34,37 +32,19 @@
             <p class="card-text"><small class="text-muted">{{rs.publishedAt}}</small></p>
           </div>
         </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="col-md-8" *ngFor="let recente of noticiaRecente">
+        <div class="card-body">
+          <h5 class="card-title">{{recente.title}}</h5>
+          <div class="col-md-4">
+            <img src="{{recente.urlToImage}}" class="card-img img-fluid">
+          </div>
+          <p class="card-text">{{recente.description}}</p>
+          <p class="card-text"><small class="text-muted">{{recente.publishedAt}}</small></p>
+        </div>
       </div>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="brasil-tab">
-      <!--Conteúdo da Tab Notícias do Brasil-->
-        <div class="row no-gutters">
-            <div class="col-md-4" *ngFor="let rs of noticia">
-              <img src="{{rs.urlToImage}}" class="card-img">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">{{rs.title}}</h5>
-                <p class="card-text">{{rs.description}</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="mundo-tab">
-      <!--Conteúdo da Tab Notícias do Mundo-->
-        <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP2Jt7hDb-ZJGzrrm91TxELXL-iXDmLhte9aIsbMJsl9b56dI9CQ" class="card-img">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Notícias do Mundo</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-    </div>
-</div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+  </div>
 </ion-content>

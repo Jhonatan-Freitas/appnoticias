@@ -9,20 +9,21 @@ import { SearchNewsService } from '../services/search-news.service';
 export class HomePage implements OnInit{
  
   public noticia:any = [];
-  public noticiarecente:any [];
+  public noticiaRecente:any [];
   constructor(private serviceProvider: SearchNewsService){
 
   }
 
   ngOnInit(): void {
     this.getNews();
+    this.getNewsRecent();
   }
 
   getNews(){
     this.serviceProvider.getNewsBrazil().subscribe(
       (data:any) => {
         this.noticia = data.articles;
-        console.log(this.noticia.content);
+        
       }, error => {
         console.log(error);
       }
@@ -32,8 +33,8 @@ export class HomePage implements OnInit{
   getNewsRecent(){
     this.serviceProvider.getNewsRecent().subscribe(
       (data:any) => {
-        this.noticia = data.articles;
-        console.log(this.noticia);
+        this.noticiaRecente = data.articles;
+        console.log(this.noticiaRecente);
       }, error => {
         console.log(error);
       }
